@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - .docker/db:/var/lib/postgresql/data
+  ruby:
+    container_name: kare-raisu-api
+    build:
+      context: .
+      dockerfile: .docker/ruby/Dockerfile
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/webapp
+    labels:
+      - "traefik.frontend.rule=Host:api.kare-kaisu.test"
+      - "traefik.port=3000"
+    depends_on:
+          - db
+
+  front:
+    container_name: kare-raisu-front
+    image: node:lts-alpine
+    working_dir: /home/forge-hr/front
+    volumes:
+      - ./front:/home/forge-hr/front
+    ports:
+      - "8080:8080"
+    labels:
+      - "traefik.frontend.rule=Host:kare-raisu.test"
+      - "traefik.port=8080"
+    command: ["yarn", "serve"]
+
+  traefik:
+    container_name: kare-raisu-traefik
+    image: traefik:latest
+    command: --api --docker
+    ports:
+      - "80:80"
+      - "443:443"
+      - "18080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./.docker/traefik/traefik.toml:/etc/traefik/traefik.toml:ro
+    labels:
+      - "traefik.frontend.rule=Host:srv.kare-kaisu.test"
+      - "traefik.port=8080"
+
+volumes:
+  db-data: {}
