@@ -4,7 +4,7 @@ services:
   db:
     image: postgres
     volumes:
-      - .docker/db:/var/lib/postgresql/data
+      - data-db:/var/lib/postgresql/data
   ruby:
     container_name: kare-raisu-api
     build:
@@ -50,4 +50,4 @@ services:
       - "traefik.port=8080"
 
 volumes:
-  db-data: {}
+  data-db: {}
