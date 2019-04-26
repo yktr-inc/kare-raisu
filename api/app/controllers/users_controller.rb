@@ -5,29 +5,29 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
        if @user.save
         response = { message: 'User created successfully'}
-        render json: response, status: :created 
+        render json: response, status: :created
        else
         render json: @user.errors, status: :bad
-       end 
+       end
       end
-  
+
       def login
         authenticate params[:email], params[:password]
       end
-    
+
       private
-    
+
       def user_params
         params.permit(
-          :name,
+          :username,
           :email,
           :password
         )
       end
-  
+
       def authenticate(email, password)
         command = AuthenticateUser.call(email, password)
-    
+
         if command.success?
           render json: {
             access_token: command.result,
@@ -36,5 +36,5 @@ class UsersController < ApplicationController
         else
           render json: { error: command.errors }, status: :unauthorized
         end
-       end  
+       end
     end
