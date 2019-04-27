@@ -2,9 +2,15 @@ version: '3'
 
 services:
   db:
+    container_name: kare-raisu-db
     image: postgres
     volumes:
       - data-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: karekaisu
+
   ruby:
     container_name: kare-raisu-api
     build:
@@ -16,7 +22,7 @@ services:
     volumes:
       - ./api:/webapp
     labels:
-      - "traefik.frontend.rule=Host:api.kare-kaisu.test"
+      - "traefik.frontend.rule=Host:api.kare-raisu.test"
       - "traefik.port=3000"
     depends_on:
           - db
@@ -46,7 +52,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./.docker/traefik/traefik.toml:/etc/traefik/traefik.toml:ro
     labels:
-      - "traefik.frontend.rule=Host:srv.kare-kaisu.test"
+      - "traefik.frontend.rule=Host:srv.kare-raisu.test"
       - "traefik.port=8080"
 
 volumes:

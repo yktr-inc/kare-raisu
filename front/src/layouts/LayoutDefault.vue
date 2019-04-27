@@ -1,8 +1,9 @@
 <template>
 <el-container>
   <el-container>
-    <el-header>
-      <el-menu :router=true class="el-menu-demo" mode="horizontal">
+    <el-header class="fixed-navbar">
+      <el-menu :router=true class="el-menu-main" mode="horizontal">
+        <el-menu-item route="/">Kare kaisu</el-menu-item>
         <el-submenu index="6" class="right-menu-el">
           <el-menu-item index="1-1" route="/profile">Profile</el-menu-item>
           <el-menu-item index="1-2">Settings</el-menu-item>
@@ -13,8 +14,12 @@
         </el-menu-item>
       </el-menu>
     </el-header>
-    <el-main>
-      <router-view />
+    <el-main class="el-main">
+      <el-row :gutter="20">
+        <el-col :span="12" :offset="6">
+          <router-view />
+        </el-col>
+      </el-row>
     </el-main>
   </el-container>
 </el-container>
@@ -48,5 +53,16 @@ export default {
   .navbar-avatar{
     width: 30px;
     border-radius: 50px;
+  }
+  .fixed-navbar{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: #FFF;
+    z-index: 1;
+  }
+  .el-main{
+    margin-top: 50px;
   }
 </style>

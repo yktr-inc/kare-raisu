@@ -154,5 +154,5 @@ email = "lharang.pro@gmail.com"
 
 # Set custom domains
 [[forge-hr.domains]]
-  main = "kare-kaisu.test"
-  sans = ["api.kare-kaisu.test", "srv.kare-kaisu.test"]
+  main = "kare-raisu.test"
+  sans = ["api.kare-raisu.test", "srv.kare-raisu.test"]
