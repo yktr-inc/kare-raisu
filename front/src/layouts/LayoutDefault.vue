@@ -55,12 +55,16 @@ export default {
     border-radius: 50px;
   }
   .fixed-navbar{
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
     background: #FFF;
     z-index: 1;
+  }
+  .el-menu.el-menu--horizontal {
+    border-bottom: none;
   }
   .el-main{
     margin-top: 50px;
