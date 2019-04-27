@@ -1,19 +1,26 @@
 <template>
   <el-card class="feed-card">
     <div slot="header" class="clearfix">
-      <span>Card name</span>
-      <el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button>
+      <span>{{ title }}</span>
+      <el-button style="float: right; padding: 3px 0" type="text">{{ edit }}</el-button>
     </div>
     <div class="text item">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      {{ content }}
     </div>
   </el-card>
 </template>
+
+<script>
+export default {
+  name: 'Card',
+  props: {
+    content: String,
+    title: String,
+    edit: String
+  }
+};
+</script>
+
 
 <style scoped>
   .text {
@@ -42,8 +49,3 @@
   }
 </style>
 
-<script>
-export default {
-  name: 'Card',
-};
-</script>

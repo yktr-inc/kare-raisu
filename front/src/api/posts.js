@@ -1,7 +1,8 @@
 import axios from './config';
 import Vapi from 'vuex-rest-api';
 
-const RESOURCE_NAME = '/posts';
+const RESOURCE_NAME = 'post';
+const RESOURCE_ENDPOINT = '/posts';
 
 const options = {
   axios: axios
@@ -13,21 +14,21 @@ const posts = new Vapi({
   },
   ...options
 })
-  .get({
-    action: 'getPost',
-    property: 'post',
-    path: ({ id }) => `${RESOURCE_NAME}/${id}`
-  })
-  .get({
-    action: 'getPosts',
-    property: 'posts',
-    path: () => RESOURCE_NAME
-  })
-  .post({
-    action: 'postPost',
-    property: 'post',
-    path: (id) => `${RESOURCE_NAME}/${id}`
-  })
-  .getStore();
+.get({
+  action: 'getPost',
+  property: RESOURCE_NAME,
+  path: ({ id }) => `${RESOURCE_ENDPOINT}/${id}`
+})
+.get({
+  action: 'getPosts',
+  property: `${RESOURCE_NAME}s`,
+  path: ({ page }) => `${RESOURCE_ENDPOINT}?page=${page}`
+})
+.post({
+  action: 'postPost',
+  property: RESOURCE_NAME,
+  path: (id) => `${RESOURCE_ENDPOINT}/${id}`
+})
+.getStore();
 
 export default posts;

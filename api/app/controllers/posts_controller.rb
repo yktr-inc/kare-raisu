@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
-
+  skip_before_action :authenticate_request, only: %i[index]
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.page params[:page]
 
     render json: @posts
   end

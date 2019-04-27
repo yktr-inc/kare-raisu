@@ -7,5 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Faker::Name.name      #=> "Christophe Bartell"
-
+50.times do
+  Post.create!(
+    title: Faker::Hipster.sentence(),
+    content: Faker::Hipster.paragraphs(rand(1...6)).join(" "),
+    upvotes: rand(0...240)
+  )
+end

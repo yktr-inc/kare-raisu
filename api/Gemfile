@@ -54,3 +54,5 @@ gem 'simple_command'
 
 gem 'kaminari'
 
+gem 'faker'
+
