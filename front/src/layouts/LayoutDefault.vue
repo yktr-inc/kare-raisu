@@ -3,7 +3,7 @@
   <el-container>
     <el-header class="fixed-navbar">
       <el-menu :router=true class="el-menu-main" mode="horizontal">
-        <el-menu-item route="/">Kare kaisu</el-menu-item>
+        <el-menu-item route="/"><img class="logo" src="../assets/logo.svg"></el-menu-item>
         <el-submenu index="6" class="right-menu-el">
           <el-menu-item index="1-1" route="/profile">Profile</el-menu-item>
           <el-menu-item index="1-2">Settings</el-menu-item>
@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style scoped>
+  .logo {
+        width: 160px;
+  }
   .right-menu-el{
     float: right !important;
   }
