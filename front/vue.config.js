@@ -2,5 +2,19 @@ module.exports = {
   lintOnSave: false,
   devServer: {
     disableHostCheck: true,
-  }
+    proxy: {
+      '/*': {
+        target: process.env.VUE_APP_BACKEND_API_URL,
+        pathRewrite: { '^/api': '' },
+        changeOrigin: true,
+        ws: true,
+        secure: false
+      }
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+    }
+  },
 };
