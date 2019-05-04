@@ -15,9 +15,12 @@
 export default {
   name: 'Card',
   props: {
-    content: String,
+    id: Number,
     title: String,
-    edit: String
+    subtitle: String,
+    readtime: Number,
+    created_at: Date
+    ,
   }
 };
 </script>
@@ -51,25 +54,36 @@ export default {
     line-height: 25px;
   }
 
-  .feed-card{
-    margin-top: 20px;
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
   }
 
-  .item {
-    margin-bottom: 5px;
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 100%;
+    display: block;
+    height: 200px;
+    object-fit: cover;
   }
 
   .clearfix:before,
   .clearfix:after {
-    display: table;
-    content: "";
-  }
-  .clearfix:after {
-    clear: both
+      display: table;
+      content: "";
   }
 
-  .box-card {
-    width: 480px;
+  .clearfix:after {
+      clear: both
+  }
+
+  span{
+    font-weight: bold;
+    font-size: 21px;
   }
 
   .el-card {

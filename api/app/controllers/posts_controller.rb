@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
-  skip_before_action :authenticate_request, only: %i[index]
+  skip_before_action :authenticate_request, only: %i[index show create update destroy]
+
   # GET /posts
   def index
     @posts = Post.page params[:page]
@@ -23,6 +24,11 @@ class PostsController < ApplicationController
       render json: @post.errors, status: :unprocessable_entity
     end
   end
+
+  private
+    def post_params
+      params.require(:post).permit(:title, :subtitle, :content, :readtime, :upvotes)
+    end
 
   # PATCH/PUT /posts/1
   def update

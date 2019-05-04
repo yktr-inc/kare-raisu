@@ -2,12 +2,17 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from '@/views/Home.vue';
+<<<<<<< HEAD
 import Profile from '@/views/Profile.vue';
 import Login from '@/views/Login.vue';
 import Register from '@/views/Register.vue';
 import Settings from '@/views/Settings.vue';
 import Post from '@/views/Post.vue';
 import PostAdd from '@/views/PostAdd.vue';
+
+import PostView from '@/views/Posts/PostView.vue';
+import PostCreate from '@/views/Posts/PostCreate.vue';
+import Post from '@/views/Posts/PostCreate.vue';
 
 import NotFound from '@/views/errors/NotFound.vue';
 
@@ -30,6 +35,22 @@ export const router = new Router({
           path: '/',
           name: 'home',
           component: Home,
+          meta: {
+            auth: true
+          }
+        },
+        {
+          path: '/posts/create',
+          name: 'PostCreate',
+          component: PostCreate,
+          meta: {
+            auth: true
+          }
+        },
+        {
+          path: '/posts/:id',
+          name: 'PostView',
+          component: PostView,
           meta: {
             auth: true
           }
