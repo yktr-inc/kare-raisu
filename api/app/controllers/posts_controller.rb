@@ -25,11 +25,6 @@ class PostsController < ApplicationController
     end
   end
 
-  private
-    def post_params
-      params.require(:post).permit(:title, :subtitle, :content, :readtime, :upvotes)
-    end
-
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
@@ -52,6 +47,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.fetch(:post, {})
+      params.require(:post).permit(:title, :subtitle, :content, :readtime, :upvotes)
     end
 end
