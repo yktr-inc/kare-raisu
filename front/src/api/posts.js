@@ -27,7 +27,7 @@ const posts = new Vapi({
 .post({
   action: 'postPost',
   property: RESOURCE_NAME,
-  path: (id) => `${RESOURCE_ENDPOINT}/${id}`
+  path: `${RESOURCE_ENDPOINT}`
 })
 .getStore();
 

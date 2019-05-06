@@ -41,7 +41,14 @@ export default {
         'postPost'
       ]),
       onSubmit() {
-        this.postPost({ params:  this.$route.params  });
+        const payload = {
+          "title": this.form.title,
+          "content": this.form.content,
+          "readtime": this.form.readtime,
+          "upvotes": 0
+        }
+        console.log(payload);
+        this.postPost({ data: payload });
       }
     }
 };
