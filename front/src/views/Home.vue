@@ -11,7 +11,7 @@
     </div>
     <div v-infinite-scroll="loadMore" infinite-scroll-disabled="pending">
       <div v-for="post in posts">
-        <Card :id="post.id" :title="post.title" :subtitle="post.subtitle" :readtime="post.readtime" :created_at="post.created_at"/>
+        <Card :id="post.id" :title="post.title" :readtime="post.readtime" :created_at="post.created_at"/>
       </div>
     </div>
   </div>

@@ -6,8 +6,6 @@
     <div>
       <div>{{post.title}}</div>
       <br>
-      <div>{{post.subtitle}}</div>
-      <br>
       <div>{{post.content}}</div>
     </div>
   </div>

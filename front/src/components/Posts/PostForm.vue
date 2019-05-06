@@ -3,9 +3,6 @@
     <el-form-item label="Title">
       <el-input v-model="form.title"></el-input>
     </el-form-item>
-    <el-form-item label="Subtitle">
-      <el-input v-model="form.subtitle"></el-input>
-    </el-form-item>
     <el-form-item label="Content">
      <el-input
         type="textarea"
@@ -34,7 +31,6 @@ export default {
       return {
         form: {
           title: '',
-          subtitle: '',
           content: '',
           readtime: '',
         }

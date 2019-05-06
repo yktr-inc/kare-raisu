@@ -17,7 +17,6 @@ export default {
   props: {
     id: Number,
     title: String,
-    subtitle: String,
     readtime: Number,
     created_at: Date
     ,
