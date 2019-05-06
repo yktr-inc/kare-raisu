@@ -10,7 +10,6 @@ require 'faker'
 50.times do
   Post.create!(
     title: Faker::Hipster.sentence(),
-    subtitle: Faker::Hipster.sentence(),
     content: Faker::Hipster.paragraphs(rand(1...6)).join(" "),
     readtime: rand(1...10),
     upvotes: rand(0...240)
