@@ -3,6 +3,9 @@
     <el-form-item label="Title">
       <el-input v-model="form.title"></el-input>
     </el-form-item>
+    <el-form-item label="Picture">
+      <input  type="file" id="picture" name="picture" accept="image/png, image/jpeg">
+    </el-form-item>
     <el-form-item label="Content">
      <el-input
         type="textarea"
@@ -47,7 +50,7 @@ export default {
           "readtime": this.form.readtime,
           "upvotes": 0
         }
-        console.log(payload);
+        console.log(this.form.picture);
         this.postPost({ data: payload });
       }
     }

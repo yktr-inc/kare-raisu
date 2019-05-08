@@ -56,3 +56,5 @@ gem 'kaminari'
 
 gem 'faker'
 
+gem "paperclip", "~> 6.0.0"
+
