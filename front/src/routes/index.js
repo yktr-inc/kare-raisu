@@ -3,6 +3,8 @@ import Router from 'vue-router';
 
 import Home from '@/views/Home.vue';
 import Profile from '@/views/Profile.vue';
+import Login from '@/views/Login.vue';
+import Register from '@/views/Register.vue';
 import Settings from '@/views/Settings.vue';
 
 import NotFound from '@/views/errors/NotFound.vue';
@@ -54,6 +56,34 @@ export const router = new Router({
           path: '/profile',
           name: 'profile',
           component: Profile,
+          meta: {
+            auth: true
+          }
+        }
+      ]
+    },
+    {
+      component: LayoutDefault,
+      path: '',
+      children: [
+        {
+          path: '/login',
+          name: 'login',
+          component: Login,
+          meta: {
+            auth: true
+          }
+        }
+      ]
+    },
+    {
+      component: LayoutDefault,
+      path: '',
+      children: [
+        {
+          path: '/register',
+          name: 'register',
+          component: Register,
           meta: {
             auth: true
           }

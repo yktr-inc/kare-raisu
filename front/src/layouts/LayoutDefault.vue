@@ -7,8 +7,13 @@
         <el-submenu index="6" class="right-menu-el">
           <el-menu-item index="1-1" route="/profile">Profile</el-menu-item>
           <el-menu-item index="1-2" route="/settings">Settings</el-menu-item>
-          <el-menu-item route="logout" index="1-3">Logout</el-menu-item>
+          <el-menu-item route="/logout" index="1-3">Logout</el-menu-item>
         </el-submenu>
+        <el-menu-item index="1-0" class="right-menu-el">
+            <el-button size="medium" route="/login" type="primary">Sign in</el-button>
+            <el-button size="medium" route="/register">Sign up</el-button>
+        </el-menu-item>
+        
       </el-menu>
     </el-header>
     <el-main class="el-main">
@@ -29,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans:400,600|PT+Serif');
+.el-menu-item {
+  font-family: 'Open Sans', sans-serif;
+}
   .logo {
         width: 160px;
   }

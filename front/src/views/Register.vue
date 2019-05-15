@@ -1,12 +1,13 @@
 <template>
   <div class="feed" v-infinite-scroll="loadMore" infinite-scroll-disabled="isLoading" infinite-scroll-distance="10">
-    <p>Update your profile</p>
+    <p>Register</p>
     	<el-input placeholder="Firstname" v-model="input1"></el-input>
     	<el-input placeholder="Lastname" v-model="input2"></el-input>
     	<el-input placeholder="Email" v-model="input3"></el-input>
+      <el-input placeholder="Password" v-model="input3"></el-input>
 
     	<el-row>
-  <el-button>Save</el-button>
+  <el-button>Sign up</el-button>
   </el-row>
 
   </div>
@@ -18,7 +19,8 @@ export default {
     return {
       input1: '',
       input2: '',
-      input3: ''
+      input3: '',
+      input4: ''
     }
   }
 }
