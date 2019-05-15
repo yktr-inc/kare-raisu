@@ -25,7 +25,23 @@ export default {
 </script>
 
 <style scoped>
+	@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans:400,600|PT+Serif');
+
+	p {
+	padding-top: 20px;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 1.6em;
+	color: #2a2a2a;
+	}
   .el-input {
   	margin-bottom: 15px;
+  	font-size:1.1em;
+  }
+  .el-button {
+  	margin-top: 10px;
+  	font-family: 'Libre Baskerville', serif;
+	font-size: 1.2em;
+	color: #2a2a2a;
+	float: right;
   }
 </style>
