@@ -3,15 +3,12 @@
   <el-container>
     <el-header class="fixed-navbar">
       <el-menu :router=true class="el-menu-main" mode="horizontal">
-        <el-menu-item route="/"><img class="logo" src="../assets/logo.svg"></el-menu-item>
+        <el-menu-item route="/"><router-link to="/"><img class="logo" src="../assets/logo.svg"></router-link></el-menu-item>
         <el-submenu index="6" class="right-menu-el">
           <el-menu-item index="1-1" route="/profile">Profile</el-menu-item>
-          <el-menu-item index="1-2">Settings</el-menu-item>
+          <el-menu-item index="1-2" route="/settings">Settings</el-menu-item>
           <el-menu-item route="logout" index="1-3">Logout</el-menu-item>
         </el-submenu>
-        <el-menu-item index="1-0" class="right-menu-el">
-            <el-badge is-dot class="item badge-icon"/>
-        </el-menu-item>
       </el-menu>
     </el-header>
     <el-main class="el-main">
