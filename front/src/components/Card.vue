@@ -1,8 +1,9 @@
 <template>
   <el-card class="feed-card">
     <div slot="header" class="clearfix">
-      <span>Card name</span>
-      <el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button>
+      <span class="title">Lorem ipsum dolor sit amet</span>
+      <div><span class="credit">John Smith</span></div>
+      <div><span class="details">April 27 · 5 min read</span></div>
     </div>
     <div class="text item">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -16,8 +17,31 @@
 </template>
 
 <style scoped>
+  @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans:400,600|PT+Serif');
+
+  .title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.6em;
+  }
+
+  .credit {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin-left: 5px;
+  }
+
+  .details {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95em;
+    color: #7c7c7c;
+    margin-left: 5px;
+  }
+
   .text {
-    font-size: 14px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.25em;
+    line-height: 33px;
   }
 
   .feed-card{
@@ -39,6 +63,12 @@
 
   .box-card {
     width: 480px;
+  }
+
+  .el-card {
+    color: #2a2a2a;
+    border-radius: 0px;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;
   }
 </style>
 

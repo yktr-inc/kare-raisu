@@ -3,15 +3,17 @@
   <el-container>
     <el-header class="fixed-navbar">
       <el-menu :router=true class="el-menu-main" mode="horizontal">
-        <el-menu-item route="/">Kare kaisu</el-menu-item>
+        <el-menu-item route="/"><router-link to="/"><img class="logo" src="../assets/logo.svg"></router-link></el-menu-item>
         <el-submenu index="6" class="right-menu-el">
           <el-menu-item index="1-1" route="/profile">Profile</el-menu-item>
-          <el-menu-item index="1-2">Settings</el-menu-item>
-          <el-menu-item route="logout" index="1-3">Logout</el-menu-item>
+          <el-menu-item index="1-2" route="/settings">Settings</el-menu-item>
+          <el-menu-item route="/logout" index="1-3">Logout</el-menu-item>
         </el-submenu>
         <el-menu-item index="1-0" class="right-menu-el">
-            <el-badge is-dot class="item badge-icon"/>
+            <el-button size="medium" route="/login" type="primary">Sign in</el-button>
+            <el-button size="medium" route="/register">Sign up</el-button>
         </el-menu-item>
+        
       </el-menu>
     </el-header>
     <el-main class="el-main">
@@ -32,6 +34,13 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans:400,600|PT+Serif');
+.el-menu-item {
+  font-family: 'Open Sans', sans-serif;
+}
+  .logo {
+        width: 160px;
+  }
   .right-menu-el{
     float: right !important;
   }
@@ -55,12 +64,16 @@ export default {
     border-radius: 50px;
   }
   .fixed-navbar{
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
     background: #FFF;
     z-index: 1;
+  }
+  .el-menu.el-menu--horizontal {
+    border-bottom: none;
   }
   .el-main{
     margin-top: 50px;
