@@ -1,16 +1,17 @@
 <template>
-  <div class="editor">
+  <div>
+  <el-card class="margin-me">
     <el-row>
-      <el-col :span="12">
-        <h2> Add a new post </h2>
+      <el-col :span="20">
+        <h2> Add a new article </h2>
       </el-col>
       <el-col :span="2">
         <el-button type="primary" size="small" @click=saveContent>Publish my post</el-button>
       </el-col>
     </el-row>
-    <br>
-    <br>
-    <br>
+  </el-card>
+  <el-card>
+  <div class="editor">
     <editor-menu-bubble :editor="editor" :keep-in-bounds="keepInBounds" v-slot="{ commands, isActive, menu }">
       <div
         class="menububble"
@@ -103,6 +104,8 @@
           </div>
     </editor-floating-menu>
 </div>
+</el-card>
+</div>
 </template>
 
 <script>
@@ -166,11 +169,11 @@ export default {
           new History(),
         ],
         content: `
-          <h2>
-            New post
-          </h2>
+          <h1>
+            My new article
+          </h1>
           <p>
-            Start writing your new post
+            <i>Start writing</i>
           </p>
         `,
       }),
@@ -198,6 +201,7 @@ export default {
   @import "@/assets/main.scss";
   @import "@/assets/editor.scss";
   .editor {
+    max-width: 45rem !important;
     position: relative;
     &__floating-menu {
       position: absolute;
@@ -210,5 +214,8 @@ export default {
         visibility: visible;
       }
     }
+  }
+  .margin-me{
+    margin-bottom: 50px;
   }
 </style>
