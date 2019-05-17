@@ -36,26 +36,26 @@ export const router = new Router({
           name: 'home',
           component: Home,
           meta: {
-            auth: true
-          }
+            auth: true,
+          },
         },
         {
           path: '/posts/create',
           name: 'PostCreate',
           component: PostCreate,
           meta: {
-            auth: true
-          }
+            auth: true,
+          },
         },
         {
           path: '/posts/:id',
           name: 'PostView',
           component: PostView,
           meta: {
-            auth: true
-          }
+            auth: true,
+          },
         },
-      ]
+      ],
     },
     {
       component: LayoutDefault,
@@ -143,9 +143,9 @@ export const router = new Router({
     },
     {
       path: '*',
-      component: NotFound
-    }
-  ]
+      component: NotFound,
+    },
+  ],
 });
 
 

@@ -12,6 +12,6 @@ require 'faker'
     title: Faker::Hipster.sentence(),
     content: Faker::Hipster.paragraphs(rand(1...6)).join(" "),
     readtime: rand(1...10),
-    upvotes: rand(0...240)
+    upvotes: rand(0...240),
   )
 end

@@ -26,31 +26,31 @@ export default {
   name: 'home',
   components: {
     VclList,
-    Card
+    Card,
   },
 
   data() {
     return {
       page: 1,
-    }
+    };
   },
 
   computed: mapState({
     posts: state => state.posts.posts,
     pending: state => state.posts.pending.posts,
-    error: state => state.posts.error.posts
+    error: state => state.posts.error.posts,
   }),
   methods: {
     ...mapActions([
-      'getPosts'
+      'getPosts',
     ]),
     loadMore() {
-      //this.page = this.page + 1;
-      //this.getPosts({ params: { page: this.page } });
-    }
+      // this.page = this.page + 1;
+      // this.getPosts({ params: { page: this.page } });
+    },
   },
-  created () {
+  created() {
     this.getPosts({ params: { page: this.page } });
-  }
+  },
 };
 </script>

@@ -1,34 +1,34 @@
-import axios from './config';
 import Vapi from 'vuex-rest-api';
+import axios from './config';
 
 const RESOURCE_NAME = 'post';
 const RESOURCE_ENDPOINT = '/posts';
 
 const options = {
-  axios: axios
+  axios,
 };
 
 const posts = new Vapi({
   state: {
-    posts: []
+    posts: [],
   },
-  ...options
+  ...options,
 })
-.get({
-  action: 'getPost',
-  property: RESOURCE_NAME,
-  path: ({ id }) => `${RESOURCE_ENDPOINT}/${id}`
-})
-.get({
-  action: 'getPosts',
-  property: `${RESOURCE_NAME}s`,
-  path: ({ page }) => `${RESOURCE_ENDPOINT}?page=${page}`
-})
-.post({
-  action: 'postPost',
-  property: RESOURCE_NAME,
-  path: `${RESOURCE_ENDPOINT}`
-})
-.getStore();
+  .get({
+    action: 'getPost',
+    property: RESOURCE_NAME,
+    path: ({ id }) => `${RESOURCE_ENDPOINT}/${id}`,
+  })
+  .get({
+    action: 'getPosts',
+    property: `${RESOURCE_NAME}s`,
+    path: ({ page }) => `${RESOURCE_ENDPOINT}?page=${page}`,
+  })
+  .post({
+    action: 'postPost',
+    property: RESOURCE_NAME,
+    path: `${RESOURCE_ENDPOINT}`,
+  })
+  .getStore();
 
 export default posts;

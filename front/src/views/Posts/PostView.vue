@@ -18,21 +18,21 @@ import Card from '@/components/Card';
 export default {
   name: 'PostView',
   components: {
-    Card
+    Card,
   },
 
   computed: mapState({
     post: state => state.posts.post,
     pending: state => state.posts.pending.posts,
-    error: state => state.posts.error.posts
+    error: state => state.posts.error.posts,
   }),
   methods: {
     ...mapActions([
-      'getPost'
+      'getPost',
     ]),
   },
-  created () {
-    this.getPost({ params:  this.$route.params  });
-  }
+  created() {
+    this.getPost({ params: this.$route.params });
+  },
 };
 </script>

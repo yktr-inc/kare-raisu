@@ -9,11 +9,11 @@ const instance = axios.create({
   timeout: DEFAULT_TIMEOUT,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
-instance.interceptors.request.use(function (config) {
+instance.interceptors.request.use((config) => {
   const token = store.getters['auth/getToken'];
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;

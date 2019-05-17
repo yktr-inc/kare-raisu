@@ -7,6 +7,10 @@ down:
 run:
 	docker-compose up
 
+restart:
+	docker-compose down && \
+	docker-compose up
+
 install:
 	cd front && yarn install
 
@@ -15,3 +19,6 @@ clean-front:
 	rm yarn.lock && \
 	rm -rf node_modules && \
 	yarn install
+
+prepare:
+	docker-compose exec ruby rails db:drop db:create db:migrate db:seed

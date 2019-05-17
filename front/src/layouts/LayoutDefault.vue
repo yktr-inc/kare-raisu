@@ -7,11 +7,17 @@
         <el-submenu index="6" class="right-menu-el">
           <el-menu-item index="1-1" route="/profile">My profile</el-menu-item>
           <el-menu-item index="1-2" route="/settings">My posts</el-menu-item>
+          <el-menu-item index="2" route="/posts/create"><PlusIcon /></el-menu-item>
+          <el-submenu index="3" class="right-menu-el">
+          <el-menu-item index="1-1" route="/profile">Profile</el-menu-item>
+          <el-menu-item index="1-2" route="/settings">Settings</el-menu-item>
           <el-menu-item route="/logout" index="1-3">Logout</el-menu-item>
         </el-submenu>
         <el-menu-item index="1-0" class="right-menu-el">
             <el-button size="medium" route="/login" type="primary">Sign in</el-button>
             <el-button size="medium" route="/register">Sign up</el-button>
+            <BellIcon />
+            <el-badge is-dot class="item badge-icon"/>
         </el-menu-item>
 
       </el-menu>
@@ -28,8 +34,17 @@
 </template>
 
 <script>
+import PlusIcon from 'vue-material-design-icons/Plus.vue';
+import BellIcon from 'vue-material-design-icons/Bell.vue';
+import UserIcon from 'vue-material-design-icons/Account.vue';
+
 export default {
   name: 'LayoutDefault',
+  components: {
+    PlusIcon,
+    BellIcon,
+    UserIcon,
+  },
 };
 </script>
 
