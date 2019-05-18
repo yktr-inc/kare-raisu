@@ -13,7 +13,7 @@
             <el-button size="medium" route="/login" type="primary">Sign in</el-button>
             <el-button size="medium" route="/register">Sign up</el-button>
         </el-menu-item>
-        
+
       </el-menu>
     </el-header>
     <el-main class="el-main">
@@ -35,11 +35,12 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans:400,600|PT+Serif');
-.el-menu-item {
-  font-family: 'Open Sans', sans-serif;
-}
+
+  .el-menu-item {
+    font-family: 'Open Sans', sans-serif;
+  }
   .logo {
-        width: 160px;
+    width: 160px;
   }
   .right-menu-el{
     float: right !important;
@@ -77,5 +78,8 @@ export default {
   }
   .el-main{
     margin-top: 50px;
+  }
+  .el-button {
+    margin-left: 10px;
   }
 </style>

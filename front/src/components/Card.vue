@@ -21,27 +21,31 @@
 
   .title {
     font-family: 'Libre Baskerville', serif;
-    font-size: 2.6em;
+    font-size: 1.4em;
   }
 
   .credit {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.95em;
     font-weight: 600;
-    margin-left: 5px;
+    margin-left: 2px;
   }
 
   .details {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.95em;
     color: #7c7c7c;
-    margin-left: 5px;
+    margin-left: 2px;
   }
 
   .text {
     font-family: 'Libre Baskerville', serif;
-    font-size: 1.25em;
-    line-height: 33px;
+    font-size: 1em;
+    line-height: 25px;
+  }
+
+  .item[data-v-54cdc180] {
+    margin-bottom: 5px;
   }
 
   .feed-card{
