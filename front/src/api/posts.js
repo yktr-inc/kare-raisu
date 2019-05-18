@@ -1,11 +1,11 @@
 import Vapi from 'vuex-rest-api';
-import axios from './config';
+import axiosConfig from './config';
 
 const RESOURCE_NAME = 'post';
 const RESOURCE_ENDPOINT = '/posts';
 
 const options = {
-  axios,
+  axios: axiosConfig,
 };
 
 const posts = new Vapi({

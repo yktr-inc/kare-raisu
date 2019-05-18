@@ -3,11 +3,9 @@
   <el-container>
     <el-header class="fixed-navbar">
       <el-menu :router=true class="el-menu-main" mode="horizontal">
-        <el-menu-item route="/"><router-link to="/"><img class="logo" src="../assets/logo.svg"></router-link></el-menu-item>
-        <el-submenu index="6" class="right-menu-el">
-          <el-menu-item index="1-1" route="/profile">My profile</el-menu-item>
-          <el-menu-item index="1-2" route="/settings">My posts</el-menu-item>
-          <el-submenu index="3" class="right-menu-el">
+        <el-menu-item route="/">
+          <img class="logo" src="../assets/logo.svg">
+        </el-menu-item>
         <el-menu-item index="2" route="/posts/create"><PlusIcon /></el-menu-item>
         <el-submenu index="3" class="right-menu-el">
           <el-menu-item index="1-1" route="/profile">Profile</el-menu-item>
@@ -15,8 +13,8 @@
           <el-menu-item route="/logout" index="1-3">Logout</el-menu-item>
         </el-submenu>
         <el-menu-item  class="right-menu-el">
-            <el-button index="4" size="medium" route="/login" type="primary">Sign in</el-button>
-            <el-button index="5" size="medium" route="/register">Sign up</el-button>
+            <el-button index="4" size="small" route="/login" type="primary">Sign in</el-button>
+            <el-button index="5" size="small" route="/register">Sign up</el-button>
             <BellIcon />
             <el-badge is-dot class="item badge-icon"/>
         </el-menu-item>
@@ -36,26 +34,19 @@
 <script>
 import PlusIcon from 'vue-material-design-icons/Plus.vue';
 import BellIcon from 'vue-material-design-icons/Bell.vue';
-import UserIcon from 'vue-material-design-icons/Account.vue';
 
 export default {
   name: 'LayoutDefault',
   components: {
     PlusIcon,
     BellIcon,
-    UserIcon,
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans:400,600|PT+Serif');
-
-  .el-menu-item {
-    font-family: 'Open Sans', sans-serif;
-  }
   .logo {
-    width: 160px;
+        width: 100px;
   }
   .right-menu-el{
     float: right !important;
@@ -64,7 +55,7 @@ export default {
     margin: 20px;
   }
   .sidebar-logo{
-    width: 60px;
+    width: 50px;
   }
   .sidebar-sitename{
     margin-top: 0px;

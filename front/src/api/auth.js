@@ -1,10 +1,10 @@
-import axios from './config';
+import axiosConfig from './config';
 
 export default {
   getToken(username, password) {
-    return axios.post('/login_check', { username, password });
+    return axiosConfig.post('/login_check', { username, password });
   },
   getUserInfo() {
-    return axios.get('/users/me');
+    return axiosConfig.get('/users/me');
   },
 };

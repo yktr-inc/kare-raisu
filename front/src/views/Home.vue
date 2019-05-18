@@ -10,8 +10,13 @@
       <vcl-list />
     </div>
     <div v-infinite-scroll="loadMore" infinite-scroll-disabled="pending">
-      <div v-for="post in posts">
-        <Card :id="post.id" :title="post.title" :readtime="post.readtime" :created_at="post.created_at"/>
+      <div :key="post.id" v-for="post in posts">
+        <Card
+        :content="post.content"
+        :id="post.id"
+        :title="post.title"
+        :readtime="post.readtime"
+        :created_at="post.created_at" />
       </div>
     </div>
   </div>
@@ -20,7 +25,7 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import { VclList } from 'vue-content-loading';
-import Card from '@/components/Card';
+import Card from '@/components/Card.vue';
 
 export default {
   name: 'home',

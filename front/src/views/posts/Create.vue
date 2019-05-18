@@ -1,7 +1,7 @@
 <template>
   <div>
   <el-card class="margin-me">
-    <el-row>
+    <el-row class="margin-me">
       <el-col :span="20">
         <h2> Add a new article </h2>
       </el-col>
@@ -9,10 +9,22 @@
         <el-button type="primary" size="small" @click=saveContent>Publish my post</el-button>
       </el-col>
     </el-row>
+    <el-row>
+      <el-col :span="6">
+        <h2> Title </h2>
+      </el-col>
+      <el-col :span="16">
+        <el-input />
+      </el-col>
+    </el-row>
   </el-card>
   <el-card>
   <div class="editor">
-    <editor-menu-bubble :editor="editor" :keep-in-bounds="keepInBounds" v-slot="{ commands, isActive, menu }">
+    <editor-menu-bubble
+    :editor="editor"
+    :keep-in-bounds="keepInBounds"
+    v-slot="{ commands, isActive, menu }"
+    >
       <div
         class="menububble"
         :class="{ 'is-active': menu.isActive }"
@@ -169,9 +181,6 @@ export default {
           new History(),
         ],
         content: `
-          <h1>
-            My new article
-          </h1>
           <p>
             <i>Start writing</i>
           </p>
