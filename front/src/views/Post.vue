@@ -3,6 +3,9 @@
 		<Card />
 		<p>Comments</p>
 		<Comment />
+		<el-row>
+				<el-button>Add a comment</el-button>
+		</el-row>
   </div>
 </template>
 
@@ -12,6 +15,10 @@
 		font-family: 'Libre Baskerville', serif;
 		font-size: 1.3em;
 		color: #2a2a2a;
+	}
+	.el-button {
+		margin-top: 25px;
+		float: right;
 	}
 </style>
 
