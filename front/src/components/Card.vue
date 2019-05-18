@@ -2,8 +2,8 @@
   <el-card class="feed-card">
     <div slot="header" class="clearfix">
       <span class="title">Lorem ipsum dolor sit amet</span>
-      <div><span class="credit">John Smith</span></div>
-      <div><span class="details">April 27 · 5 min read</span></div>
+      <div><span class="credit">John Smith</span>
+      <span class="details"> · 1 hour ago · 3 comments</span></div>
     </div>
     <div class="text item">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -44,16 +44,12 @@
     line-height: 25px;
   }
 
-  .item[data-v-54cdc180] {
-    margin-bottom: 5px;
-  }
-
   .feed-card{
     margin-top: 20px;
   }
 
   .item {
-    margin-bottom: 18px;
+    margin-bottom: 5px;
   }
 
   .clearfix:before,

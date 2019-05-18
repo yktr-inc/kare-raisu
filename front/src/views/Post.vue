@@ -1,12 +1,8 @@
 <template>
   <div class="feed" v-infinite-scroll="loadMore" infinite-scroll-disabled="isLoading" infinite-scroll-distance="10">
-    <p>Add a new post</p>
-		<el-row>
-			<router-link to="/post/add"><el-button>Create a new post</el-button></router-link>
-		</el-row>
-
-		<p>My posts</p>
 		<Card />
+		<p>Comments</p>
+		<Comment />
   </div>
 </template>
 
@@ -21,11 +17,13 @@
 
 <script>
 import Card from '@/components/Card.vue';
+import Comment from '@/components/Comment.vue';
 
 export default {
   name: 'home',
   components: {
-    Card,
+		Card,
+		Comment
   },
   data: {
     data: [],
