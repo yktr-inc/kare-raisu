@@ -1,12 +1,9 @@
 <template>
   <div class="feed" v-infinite-scroll="loadMore" infinite-scroll-disabled="isLoading" infinite-scroll-distance="10">
-    <p>Update your profile</p>
-    	<el-input placeholder="Firstname" v-model="input1"></el-input>
-    	<el-input placeholder="Lastname" v-model="input2"></el-input>
-    	<el-input placeholder="Email" v-model="input3"></el-input>
-
+    <p>Add a post</p>
+    	
     	<el-row>
-				<el-button>Save</el-button>
+				<el-button>Post</el-button>
 			</el-row>
   </div>
 </template>
@@ -37,8 +34,8 @@ export default {
   .el-button {
   	margin-top: 10px;
   	font-family: 'Libre Baskerville', serif;
-  	font-size: 1.2em;
-  	color: #2a2a2a;
-  	float: right;
+		font-size: 1em;
+		color: #2a2a2a;
+		float: right;
   }
 </style>

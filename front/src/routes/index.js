@@ -6,6 +6,8 @@ import Profile from '@/views/Profile.vue';
 import Login from '@/views/Login.vue';
 import Register from '@/views/Register.vue';
 import Settings from '@/views/Settings.vue';
+import Post from '@/views/Post.vue';
+import PostAdd from '@/views/PostAdd.vue';
 
 import NotFound from '@/views/errors/NotFound.vue';
 
@@ -84,6 +86,34 @@ export const router = new Router({
           path: '/register',
           name: 'register',
           component: Register,
+          meta: {
+            auth: true
+          }
+        }
+      ]
+    },
+    {
+      component: LayoutDefault,
+      path: '',
+      children: [
+        {
+          path: '/post/add',
+          name: 'post-add',
+          component: PostAdd,
+          meta: {
+            auth: true
+          }
+        }
+      ]
+    },
+    {
+      component: LayoutDefault,
+      path: '',
+      children: [
+        {
+          path: '/post',
+          name: 'post',
+          component: Post,
           meta: {
             auth: true
           }
